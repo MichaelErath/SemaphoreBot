@@ -1,0 +1,292 @@
+' {$STAMP BS2sx}
+' {$PBASIC 2.5}
+
+'----------------------------------------------------------------------------
+' Program Description
+'----------------------------------------------------------------------------
+
+' This program is to test semaphore star postition
+' then to ask for  a letter from a to d
+' show the letter
+' return to start position
+
+'----------------------------------------------------------------------------
+' IO Definitions
+'----------------------------------------------------------------------------
+RElbow          CON 0   '500-2700
+LElbow          CON 1   '500-2700
+LShoulder       CON 2   '800-3000
+Rshoulder       CON 3   '300-3000
+RWrist          CON 4   '700-4000
+LWrist          CON 5   '700-4000
+
+'----------------------------------------------------------------------------
+' Consants
+'----------------------------------------------------------------------------
+Baud  CON     240
+
+'----------------------------------------------------------------------------
+' Variables
+'----------------------------------------------------------------------------
+servo VAR Byte(5)
+pos   VAR Word
+x VAR Word
+'----------------------------------------------------------------------------
+' MAIN
+'----------------------------------------------------------------------------
+    '
+    GOSUB init
+Main:
+   GOSUB letc
+   GOSUB leta
+   GOSUB letm
+   GOSUB lete
+   GOSUB letr
+   GOSUB leta
+   GOSUB letm
+   GOSUB leta
+   GOSUB letn
+
+  GOSUB INIT
+  GOTO Main
+
+
+LetA:
+
+  'Make RWrist straight, shoulder up 45 from ground.
+   FOR x = 0 TO 50
+    PULSOUT Rwrist,1800
+    PULSOUT relbow, 1500
+    PAUSE 15
+  NEXT
+  PAUSE 2000 'wait 3 seconds
+  GOSUB init
+  RETURN
+
+LetB:
+  'Make RWrist straight, shoulder up 90 from ground.  rotate shoulder to level
+   FOR x = 0 TO 50
+    PULSOUT Rwrist,1800
+    PULSOUT relbow, 500
+    PULSOUT Rshoulder, 2000
+    PAUSE 15
+  NEXT
+  PAUSE 2000 'wait 3 seconds
+  GOSUB init
+  RETURN
+
+LetC:
+ 'Make RWrist straight, shoulder up 135 from ground.  rotate shoulder  to up
+   FOR x = 0 TO 50
+    PULSOUT Rwrist,1800
+    PULSOUT relbow, 1300
+    PULSOUT Rshoulder, 800
+    PAUSE 15
+  NEXT
+  PAUSE 2000 'wait 3 seconds
+ GOSUB init
+  RETURN
+
+LetD:
+ 'Make RWrist straight, shoulder up straight.  rotate shoulder  to up
+   FOR x = 0 TO 50
+    PULSOUT Rwrist,1800
+    PULSOUT relbow, 2000
+    PULSOUT Rshoulder, 800
+    PAUSE 15
+  NEXT
+  PAUSE 2000 'wait 3 seconds
+  GOSUB init
+  RETURN
+
+LetE:
+ 'Make LWrist straight, shoulder up 135 from ground.  rotate shoulder  to up
+   FOR x = 0 TO 50
+    PULSOUT Lwrist,1800
+    PULSOUT Lelbow, 2800
+    PULSOUT Lshoulder, 2900
+    PAUSE 15
+  NEXT
+  PAUSE 2000 'wait 3 seconds
+  GOSUB init
+  RETURN
+
+LetF:
+ 'Make LWrist straight, shoulder up 135 from ground.  rotate shoulder  to up
+   FOR x = 0 TO 50
+    PULSOUT Lwrist,1800
+    PULSOUT Lelbow, 4000
+    PULSOUT Lshoulder, 1500
+    PAUSE 15
+  NEXT
+  PAUSE 2000 'wait 3 seconds
+  GOSUB init
+  RETURN
+
+LetG:
+  'Make LWrist Straight, Shoulder up 135 from
+   'Make LWrist straight, shoulder up 135 from ground.  rotate shoulder  to up
+   FOR x = 0 TO 50
+    PULSOUT Lwrist,1800
+    PULSOUT Lelbow, 4000
+    PULSOUT Lshoulder, 1000
+    PAUSE 15
+  NEXT
+  PAUSE 2000 'wait 3 seconds
+  GOSUB init
+  RETURN
+LetH:
+LetI:
+LetJ:
+LetK:
+LetL:
+  FOR x = 0 TO 50
+    PULSOUT Rwrist,1800
+    PULSOUT relbow, 1500
+    PAUSE 15
+  NEXT
+FOR x = 0 TO 50
+    PULSOUT Rwrist,1800
+    PULSOUT relbow, 1500
+    PAUSE 15
+  NEXT
+  PAUSE 2000 'wait 3 seconds
+  GOSUB init
+  RETURN
+LetM:
+  FOR x = 0 TO 50
+    PULSOUT Rwrist,1800
+    PULSOUT relbow, 1500
+    PAUSE 15
+  NEXT
+    FOR x = 0 TO 50
+    PULSOUT Lwrist,1800
+    PULSOUT Lelbow, 4000
+    PULSOUT Lshoulder, 1500
+    PAUSE 15
+  NEXT
+  PAUSE 2000 'wait 3 seconds
+  GOSUB init
+  RETURN
+LetN:
+  FOR x = 0 TO 50
+    PULSOUT Rwrist,1800
+    PULSOUT relbow, 1500
+    PAUSE 15
+  NEXT
+   FOR x = 0 TO 50
+    PULSOUT Lwrist,1800
+    PULSOUT Lelbow, 4000
+    PULSOUT Lshoulder, 1000
+    PAUSE 15
+  NEXT
+  PAUSE 2000 'wait 3 seconds
+  GOSUB init
+  RETURN
+LetO:
+LetP:
+LetQ:
+LetR:
+'Make RWrist straight, shoulder up 135 from ground.  rotate shoulder  to up
+    FOR x = 0 TO 50
+    PULSOUT Rwrist,1800
+    PULSOUT relbow, 500
+    PULSOUT Rshoulder, 2000
+    PAUSE 15
+  NEXT
+    'Make LWrist straight, shoulder up 135 from ground.  rotate shoulder  to up
+   FOR x = 0 TO 50
+    PULSOUT Lwrist,1800
+    PULSOUT Lelbow, 4000
+    PULSOUT Lshoulder, 1500
+    PAUSE 15
+  NEXT
+  PAUSE 2000 'wait 3 seconds
+  GOSUB INIT
+  RETURN
+LetS:
+'Make RWrist straight, shoulder up 135 from ground.  rotate shoulder  to up
+    FOR x = 0 TO 50
+    PULSOUT Rwrist,1800
+    PULSOUT relbow, 500
+    PULSOUT Rshoulder, 2000
+    PAUSE 15
+  NEXT
+  FOR x = 0 TO 50
+    PULSOUT Lwrist,1800
+    PULSOUT Lelbow, 4000
+    PULSOUT Lshoulder, 1000
+    PAUSE 15
+  NEXT
+  PAUSE 2000 'wait 3 seconds
+  GOSUB INIT
+  RETURN
+LetT:
+     'Make RWrist straight, shoulder up 135 from ground.  rotate shoulder  to up
+   FOR x = 0 TO 50
+    PULSOUT Rwrist,1800
+    PULSOUT relbow, 1300
+    PULSOUT Rshoulder, 800
+    PAUSE 15
+  NEXT
+  FOR x = 0 TO 50
+    PULSOUT Lwrist,1800
+    PULSOUT Lelbow, 2000
+    PULSOUT Lshoulder, 2900
+    PAUSE 15
+  NEXT
+  PAUSE 2000 'wait 3 seconds
+  GOSUB init
+  RETURN
+LetU:
+ 'Make RWrist straight, shoulder up 135 from ground.  rotate shoulder  to up
+   FOR x = 0 TO 50
+    PULSOUT Rwrist,1800
+    PULSOUT relbow, 1300
+    PULSOUT Rshoulder, 800
+    PAUSE 15
+  NEXT
+  FOR x = 0 TO 50
+    PULSOUT Lwrist,1800
+    PULSOUT Lelbow, 2800
+    PULSOUT Lshoulder, 2900
+    PAUSE 15
+  NEXT
+  PAUSE 2000 'wait 3 seconds
+  GOSUB init
+  RETURN
+LetV:
+LetW:
+LetX:
+LetY:
+LetZ:
+
+
+
+  Init:
+
+  'center wrists first
+  FOR x = 0 TO 50
+    PULSOUT Lwrist,1800
+    PULSOUT Rwrist,1800
+    PAUSE 15
+  NEXT
+  'Center Elbows next
+  FOR x = 0 TO 50
+    PULSOUT Lelbow, 2000
+    PULSOUT relbow, 2000
+    PAUSE 15
+  NEXT
+    'Center Shoulders next
+  FOR x = 0 TO 50
+    PULSOUT Lshoulder, 700
+    PULSOUT Rshoulder, 3500
+    PAUSE 15
+  NEXT
+  ' Move hands to neutral semphore position    1200 2300
+  FOR x = 0 TO 50
+    PULSOUT Lwrist,2800
+    PULSOUT Rwrist,1200
+    PAUSE 15
+  NEXT
+  RETURN
